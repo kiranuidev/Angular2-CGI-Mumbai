@@ -5,13 +5,20 @@ var __extends = (this && this.__extends) || function (d, b) {
 };
 var Vehicle = (function () {
     function Vehicle() {
+        console.log("Welcome to vehicle");
     }
+    Vehicle.prototype.getVehicle = function () {
+        return "XXX";
+    };
     return Vehicle;
 }());
 var Car = (function (_super) {
     __extends(Car, _super);
     function Car() {
-        return _super.apply(this, arguments) || this;
+        var _this;
+        console.log("Hello world");
+        _this = _super.call(this) || this;
+        return _this;
     }
     return Car;
 }(Vehicle));
