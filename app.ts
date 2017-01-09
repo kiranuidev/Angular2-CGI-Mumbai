@@ -1,2 +1,13 @@
+class Vehicle implements IVehicle{
+     getVehicle(){
+         return "XXX";
+     }
+}
 
-var user="kiran";
+
+interface IVehicle{
+    getVehicle():String
+}
+class Car extends Vehicle{
+
+}
