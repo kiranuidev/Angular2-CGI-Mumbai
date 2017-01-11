@@ -9,7 +9,7 @@ import {Component} from '@angular/core';
 export class HeaderComponent{
  brand="CGI";
  page="home";
- navigationItems=["Login","SignUp","Home","Products"];
+ navigationItems=["Login","SignUp","Home","Products","Register"];
  
  loadPage(type){
     this.page =type;

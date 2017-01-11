@@ -13,6 +13,7 @@ import { TableHeaderComponent } from './table-header/table-header.component';
 
 
 import {LookupService} from"./services/lookup.service";
+import { RegisterComponent } from './register/register.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import {LookupService} from"./services/lookup.service";
     ProductsComponent,
     PhoneformatterPipe,
     CountryListComponent,
-    TableHeaderComponent
+    TableHeaderComponent,
+    RegisterComponent
   ],
   imports: [
     BrowserModule,
