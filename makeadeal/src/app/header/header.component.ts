@@ -14,4 +14,8 @@ export class HeaderComponent{
  loadPage(type){
     this.page =type;
  }
+
+ selectedCountry(data){
+     console.log(data);
+ }
 }

@@ -19,14 +19,18 @@
 
             </ul>
             <ul class="nav navbar-nav navbar-right ">
-                <li><a href="# ">Link</a></li>
+                <li>
+                    <app-country-list (emitSelectedCountry)="selectedCountry($event)"></app-country-list>
+                </li>
             </ul>
         </div>
     </div>
 </nav>
 <div *ngIf="page=='Login'">
-    <app-login></app-login>
+    <app-login [pageName]="page"></app-login>
 </div>
 <div *ngIf="page=='Home'">
     <h1>Home</h1>
 </div>
+
+<app-products></app-products>

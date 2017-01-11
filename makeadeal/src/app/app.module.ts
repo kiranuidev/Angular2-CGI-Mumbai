@@ -6,19 +6,30 @@ import { HttpModule } from '@angular/http';
 import { HeaderComponent } from './header/header.component';
 import { AppComponent } from './app.component';
 import { LoginComponent } from './login/login.component';
+import { ProductsComponent } from './products/products.component';
+import { PhoneformatterPipe } from './utils/phoneformatter.pipe';
+import { CountryListComponent } from './country-list/country-list.component';
+import { TableHeaderComponent } from './table-header/table-header.component';
+
+
+import {LookupService} from"./services/lookup.service";
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
-    LoginComponent
+    LoginComponent,
+    ProductsComponent,
+    PhoneformatterPipe,
+    CountryListComponent,
+    TableHeaderComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
     HttpModule
   ],
-  providers: [],
+  providers: [LookupService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
