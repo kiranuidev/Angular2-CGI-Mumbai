@@ -1,29 +1,29 @@
 <div class="container">
-    <form class="form-horizontal" role="form">
+    <div class="form-horizontal" role="form">
         <h2>Registration Form</h2>
         <div class="form-group">
             <label for="firstName" class="col-sm-3 control-label">Full Name</label>
             <div class="col-sm-9">
-                <input type="text" id="firstName" placeholder="Full Name" class="form-control" autofocus>
+                <input type="text" id="firstName" placeholder="Full Name" class="form-control" autofocus [(ngModel)]="user.firstName">
                 <span class="help-block">Last Name, First Name, eg.: Smith, Harry</span>
             </div>
         </div>
         <div class="form-group">
             <label for="email" class="col-sm-3 control-label">Email</label>
             <div class="col-sm-9">
-                <input type="email" id="email" placeholder="Email" class="form-control">
+                <input type="text" numbersonly [(ngModel)]="user.email" id="email" placeholder="Email" class="form-control">
             </div>
         </div>
         <div class="form-group">
             <label for="password" class="col-sm-3 control-label">Password</label>
             <div class="col-sm-9">
-                <input type="password" id="password" placeholder="Password" class="form-control">
+                <input type="password" id="password" [(ngModel)]="user.password" placeholder="Password" class="form-control">
             </div>
         </div>
         <div class="form-group">
             <label for="birthDate" class="col-sm-3 control-label">Date of Birth</label>
             <div class="col-sm-9">
-                <input type="date" id="birthDate" class="form-control">
+                <input type="date" id="birthDate" class="form-control" [(ngModel)]="user.DOB">
             </div>
         </div>
         <div class="form-group">
@@ -48,17 +48,20 @@
                 <div class="row">
                     <div class="col-sm-4">
                         <label class="radio-inline">
-                                    <input type="radio" id="femaleRadio" value="Female">Female
+                                    <input type="radio" [(ngModel)]="user.gender" id="femaleRadio" value="Female">Female
                                 </label>
                     </div>
                     <div class="col-sm-4">
                         <label class="radio-inline">
-                                    <input type="radio" id="maleRadio" value="Male">Male
+                                    <input type="radio" id="maleRadio"  [(ngModel)]="user.gender" value="Male">Male
                                 </label>
                     </div>
                     <div class="col-sm-4">
                         <label class="radio-inline">
-                                    <input type="radio" id="uncknownRadio" value="Unknown">Unknown
+                                    <input type="radio" id="uncknownRadio"
+                                    
+                                    [(ngModel)]="user.gender"
+                                     value="Unknown">Unknown
                                 </label>
                     </div>
                 </div>
@@ -70,12 +73,14 @@
             <div class="col-sm-9">
                 <div class="checkbox">
                     <label>
-                                <input type="checkbox" id="calorieCheckbox" value="Low calorie">Low calorie
+                                <input type="checkbox" [(ngModel)]="user.calorieCheckBox" id="calorieCheckbox" value="Low calorie">Low calorie
                             </label>
                 </div>
                 <div class="checkbox">
                     <label>
-                                <input type="checkbox" id="saltCheckbox" value="Low salt">Low salt
+                                <input type="checkbox" id="saltCheckbox"
+                                [(ngModel)]="user.lowSalt"
+                                 value="Low salt">Low salt
                             </label>
                 </div>
             </div>
@@ -85,7 +90,7 @@
             <div class="col-sm-9 col-sm-offset-3">
                 <div class="checkbox">
                     <label>
-                                <input type="checkbox">I accept <a href="#">terms</a>
+                                <input [(ngModel)]="user.agree" type="checkbox">I accept <a href="#">terms</a>
                             </label>
                 </div>
             </div>
@@ -93,10 +98,10 @@
         <!-- /.form-group -->
         <div class="form-group">
             <div class="col-sm-9 col-sm-offset-3">
-                <button type="submit" class="btn btn-primary btn-block">Register</button>
+                <button type="submit" (click)="registerUser()" class="btn btn-primary btn-block">Register</button>
             </div>
         </div>
-    </form>
+    </div>
     <!-- /form -->
 </div>
 <!-- ./container -->

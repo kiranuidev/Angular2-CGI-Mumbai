@@ -12,8 +12,10 @@ import { CountryListComponent } from './country-list/country-list.component';
 import { TableHeaderComponent } from './table-header/table-header.component';
 
 
-import {LookupService} from"./services/lookup.service";
+import {LookupService} from "./services/lookup.service";
+import {RegisterService} from "./services/register.service";
 import { RegisterComponent } from './register/register.component';
+import { NumbersonlyDirective } from './numbersonly.directive';
 
 @NgModule({
   declarations: [
@@ -24,14 +26,15 @@ import { RegisterComponent } from './register/register.component';
     PhoneformatterPipe,
     CountryListComponent,
     TableHeaderComponent,
-    RegisterComponent
+    RegisterComponent,
+    NumbersonlyDirective
   ],
   imports: [
     BrowserModule,
     FormsModule,
     HttpModule
   ],
-  providers: [LookupService],
+  providers: [LookupService,RegisterService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
