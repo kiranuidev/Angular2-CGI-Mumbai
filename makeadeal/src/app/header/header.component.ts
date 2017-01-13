@@ -1,5 +1,5 @@
 import {Component} from '@angular/core';
-
+import {Page} from'./page';
 @Component({
     templateUrl:"./header.component.html",
     selector:"app-header"
@@ -8,11 +8,17 @@ import {Component} from '@angular/core';
 
 export class HeaderComponent{
  brand="CGI";
- page="home";
+ page:Page;
  navigationItems=["Login","SignUp","Home","Products","Register"];
  
+constructor(){
+    this.page = new Page();
+    this.page.name="Welcome";
+}
+
  loadPage(type){
-    this.page =type;
+    this.page = new Page();
+    this.page.name=type;
  }
 
  selectedCountry(data){

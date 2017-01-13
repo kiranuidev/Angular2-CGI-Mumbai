@@ -22,11 +22,14 @@
                 <li>
                     <app-country-list (emitSelectedCountry)="selectedCountry($event)"></app-country-list>
                 </li>
+                <li>
+                    <cart></cart>
+                </li>
             </ul>
         </div>
     </div>
 </nav>
-<app-register></app-register>
+<!--<app-register></app-register>-->
 <!--<div *ngIf="page=='Login'">
     <app-login [pageName]="page"></app-login>
 </div>
@@ -35,3 +38,12 @@
 </div>
 
 <app-products></app-products>-->
+<div>
+    <h3>Header component</h3>
+    <input type="text" [(ngModel)]="page.name">
+    <button class="btn btn-warning" (click)="changePageName()">Change Page Name</button>
+</div>
+<div>
+    <h3>Product Component</h3>
+    <app-products [myPage]="page"></app-products>
+</div>
